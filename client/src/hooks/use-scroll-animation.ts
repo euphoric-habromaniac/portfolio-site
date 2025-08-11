@@ -52,32 +52,57 @@ export const useScrollAnimation = (
   return elementRef;
 };
 
-// Utility function to add scroll animations to multiple elements
+// Enhanced utility function to handle dynamically loaded content
 export const useScrollAnimations = () => {
   useEffect(() => {
-    const animatedElements = document.querySelectorAll(
-      '.scroll-fade-in, .scroll-slide-left, .scroll-slide-right, .scroll-scale-up, .scroll-rotate-in'
-    );
+    const observeAnimatedElements = () => {
+      const animatedElements = document.querySelectorAll(
+        '.scroll-fade-in, .scroll-slide-left, .scroll-slide-right, .scroll-scale-up, .scroll-rotate-in'
+      );
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      }
-    );
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        }
+      );
 
-    animatedElements.forEach((element) => observer.observe(element));
+      animatedElements.forEach((element) => {
+        if (!element.classList.contains('observed')) {
+          element.classList.add('observed');
+          observer.observe(element);
+        }
+      });
+
+      return observer;
+    };
+
+    // Initial observation
+    const observer = observeAnimatedElements();
+
+    // Re-observe when content changes (for dynamic loading)
+    const mutationObserver = new MutationObserver(() => {
+      observeAnimatedElements();
+    });
+
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['class']
+    });
 
     return () => {
-      animatedElements.forEach((element) => observer.unobserve(element));
+      observer.disconnect();
+      mutationObserver.disconnect();
     };
   }, []);
 };

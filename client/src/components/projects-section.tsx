@@ -1,61 +1,54 @@
-import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { useQuery } from "@tanstack/react-query";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { Badge } from "./ui/badge";
 import { ExternalLink, FolderOpen } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { loadProjects } from "@/lib/content-loader";
-import type { Project } from "@/types/content";
+import { Link } from "wouter";
+
+interface Project {
+  slug: string;
+  title: string;
+  description: string;
+  image?: string;
+  tech?: string[];
+  url?: string;
+}
 
 const ProjectsSection = () => {
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const loadProjectsData = async () => {
-      try {
-        const projectsData = await loadProjects();
-        setProjects(projectsData);
-      } catch (err) {
-        setError(err instanceof Error ? err.message : 'Failed to load projects');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadProjectsData();
-  }, []);
-
-  if (loading) {
-    return (
-      <section id="projects" className="py-20 lg:py-32">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          <div className="text-center py-16">
-            <div className="animate-pulse">
-              <div className="h-8 bg-neutral-200 dark:bg-neutral-800 rounded w-48 mx-auto mb-4"></div>
-              <div className="h-4 bg-neutral-200 dark:bg-neutral-800 rounded w-32 mx-auto"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
+  const { data: projects, isLoading, error } = useQuery<Project[]>({
+    queryKey: ['/api/projects'],
+  });
 
   return (
-    <section id="projects" className="py-20 lg:py-32">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold scroll-fade-in scroll-delay-100" data-testid="heading-projects">
-            Selected <span className="text-accent-primary">Work</span>
+    <section id="projects" className="py-20 wabi-section scroll-fade-in">
+      <div className="container mx-auto px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6 scroll-slide-up">
+            Featured Projects
           </h2>
-          <p className="text-neutral-500 dark:text-neutral-400 mt-4 lg:mt-0 lg:max-w-md scroll-slide-right scroll-delay-200" data-testid="text-projects-subtitle">
-            {error ? 'Error loading projects' : 'A showcase of my cybersecurity and development projects'}
+          <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed scroll-slide-up scroll-delay-200">
+            A collection of projects that demonstrate my passion for creating 
+            meaningful digital experiences, from web applications to security tools.
           </p>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-testid="projects-grid">
-          {projects.length === 0 && !error ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {isLoading ? (
+            Array.from({ length: 6 }).map((_, i) => (
+              <div
+                key={i}
+                className="animate-pulse bg-card rounded-lg p-6 wabi-shadow"
+                data-testid="skeleton-project-card"
+              >
+                <div className="aspect-video bg-neutral-300 dark:bg-neutral-700 rounded mb-4"></div>
+                <div className="h-4 bg-neutral-300 dark:bg-neutral-700 rounded mb-2"></div>
+                <div className="h-3 bg-neutral-300 dark:bg-neutral-700 rounded mb-4"></div>
+                <div className="flex gap-2">
+                  <div className="h-6 w-16 bg-neutral-300 dark:bg-neutral-700 rounded"></div>
+                  <div className="h-6 w-20 bg-neutral-300 dark:bg-neutral-700 rounded"></div>
+                </div>
+              </div>
+            ))
+          ) : !projects || projects.length === 0 ? (
             <div className="lg:col-span-3 text-center py-16 animate-fade-in">
               <div className="max-w-md mx-auto">
                 <FolderOpen className="h-12 w-12 text-neutral-400 mx-auto mb-4" />
@@ -83,7 +76,11 @@ const ProjectsSection = () => {
             projects.map((project, index) => (
               <Card 
                 key={project.slug} 
-                className={`hover-lift wabi-shadow hover:shadow-lg transition-all duration-200 group scroll-scale-up scroll-delay-${Math.min(300 + (index * 100), 600)}`}
+                className={`hover-lift wabi-shadow hover:shadow-lg transition-all duration-200 group scroll-scale-up ${
+                  index === 0 ? 'scroll-delay-300' : 
+                  index === 1 ? 'scroll-delay-400' : 
+                  'scroll-delay-500'
+                }`}
                 data-testid={`card-project-${project.slug}`}
               >
                 {project.image && (
