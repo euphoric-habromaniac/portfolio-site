@@ -1,10 +1,19 @@
+import { useState } from "react";
 import { Mail, Github, Linkedin, Download } from "lucide-react";
+import ContactForm from "./contact-form";
 
 const ContactSection = () => {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+
   const handleResumeDownload = () => {
     // Placeholder for resume download functionality
     // The actual resume link will be provided later
     console.log("Resume download will be implemented when link is provided");
+  };
+
+  const handleGetInTouchClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsContactFormOpen(true);
   };
 
   return (
@@ -16,7 +25,7 @@ const ContactSection = () => {
               Let's <span className="text-accent-primary">Connect</span>
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-8 animate-slide-up" data-testid="text-contact-description">
-              Always open to discussing cybersecurity, potential collaborations, or just having a good conversation about breaking things.
+              Always open to discussing security research, potential collaborations, book recommendations, or just having a good conversation.
             </p>
 
             {/* Contact Methods */}
@@ -96,6 +105,11 @@ const ContactSection = () => {
           </div>
         </div>
       </div>
+      
+      <ContactForm 
+        isOpen={isContactFormOpen} 
+        onClose={() => setIsContactFormOpen(false)} 
+      />
     </section>
   );
 };

@@ -63,7 +63,7 @@ const Navigation = () => {
               className="text-xl font-semibold tracking-tight hover:text-accent-primary transition-colors duration-200"
               data-testid="nav-home-link"
             >
-              pranjal kumar
+              Pranjal Kumar
             </a>
           </div>
 

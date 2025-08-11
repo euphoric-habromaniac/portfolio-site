@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="text-center">
           <p className="text-neutral-500 dark:text-neutral-400 text-sm" data-testid="text-copyright">
-            © 2024 Pranjal Kumar. Crafted with intention.
+            © 2025 Pranjal Kumar. Crafted with intention.
           </p>
         </div>
       </div>

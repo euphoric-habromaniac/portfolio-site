@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { ArrowRight, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ContactForm from "./contact-form";
 
 const HeroSection = () => {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     const target = document.querySelector(href);
@@ -32,19 +35,30 @@ const HeroSection = () => {
                   Delhi, India
                 </p>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                  <span className="block" data-testid="text-name-first">pranjal</span>
-                  <span className="block text-neutral-500 dark:text-neutral-400" data-testid="text-name-last">
-                    kumar
-                  </span>
+                  <a 
+                    href="#resume-download" 
+                    onClick={(e) => {
+                      e.preventDefault();
+                      // Placeholder for resume download - link will be provided later
+                      console.log("Resume download will be implemented when link is provided");
+                    }}
+                    className="cursor-pointer hover:text-accent-primary transition-colors duration-200"
+                    data-testid="link-name-resume"
+                  >
+                    <span className="block" data-testid="text-name-first">Pranjal</span>
+                    <span className="block text-neutral-500 dark:text-neutral-400" data-testid="text-name-last">
+                      Kumar
+                    </span>
+                  </a>
                 </h1>
               </div>
 
               <div className="max-w-lg">
                 <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed" data-testid="text-tagline">
-                  breaking systems and making them better
+                  Breaking systems and making them better
                 </p>
                 <p className="mt-4 text-neutral-500 dark:text-neutral-400" data-testid="text-role">
-                  cybersecurity enthusiast • web development intern
+                  Security researcher • Web development intern • Book enthusiast
                 </p>
               </div>
 
@@ -58,14 +72,13 @@ const HeroSection = () => {
                   View Work
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
-                <a
-                  href="#contact"
-                  onClick={(e) => handleNavClick(e, "#contact")}
+                <button
+                  onClick={() => setIsContactFormOpen(true)}
                   className="inline-flex items-center px-8 py-3 border border-border hover:border-accent-primary hover:text-accent-primary font-medium rounded-lg transition-all duration-200"
                   data-testid="button-get-in-touch"
                 >
-                  Get in touch
-                </a>
+                  Get In Touch
+                </button>
               </div>
             </div>
           </div>
@@ -102,6 +115,11 @@ const HeroSection = () => {
           </a>
         </div>
       </div>
+      
+      <ContactForm 
+        isOpen={isContactFormOpen} 
+        onClose={() => setIsContactFormOpen(false)} 
+      />
     </section>
   );
 };

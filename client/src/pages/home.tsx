@@ -6,10 +6,12 @@ import CertificationsSection from "@/components/certifications-section";
 import ExperienceSection from "@/components/experience-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
+import CursorBackground from "@/components/cursor-background";
 
 const Home = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <CursorBackground />
       <Navigation />
       <main>
         <HeroSection />
