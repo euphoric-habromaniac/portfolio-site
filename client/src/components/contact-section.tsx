@@ -21,18 +21,18 @@ const ContactSection = () => {
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 lg:col-start-2">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-slide-up" data-testid="heading-contact">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 scroll-fade-in scroll-delay-100" data-testid="heading-contact">
               Let's <span className="text-accent-primary">Connect</span>
             </h2>
-            <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-8 animate-slide-up" data-testid="text-contact-description">
+            <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-8 scroll-fade-in scroll-delay-200" data-testid="text-contact-description">
               Always open to discussing security research, potential collaborations, book recommendations, or just having a good conversation.
             </p>
 
             {/* Contact Methods */}
-            <div className="space-y-4 animate-slide-up">
+            <div className="space-y-4 scroll-slide-left scroll-delay-300">
               <a
                 href="mailto:contact@pranjalkumar.com"
-                className="flex items-center space-x-4 p-4 bg-card rounded-lg wabi-shadow hover:bg-accent/5 transition-all duration-200 group"
+                className="flex items-center space-x-4 p-4 bg-card rounded-lg wabi-shadow hover:bg-accent/5 transition-all duration-200 group scroll-slide-left scroll-delay-400"
                 data-testid="link-contact-email"
               >
                 <div className="p-3 bg-accent-primary/10 rounded-lg group-hover:bg-accent-primary/20 transition-colors duration-200">
@@ -51,7 +51,7 @@ const ContactSection = () => {
                   href="https://github.com/euphoric-habromaniac"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-4 p-4 bg-card rounded-lg wabi-shadow hover:bg-accent/5 transition-all duration-200 group"
+                  className="flex items-center space-x-4 p-4 bg-card rounded-lg wabi-shadow hover:bg-accent/5 transition-all duration-200 group scroll-slide-left scroll-delay-500"
                   data-testid="link-contact-github"
                 >
                   <div className="p-3 bg-accent-primary/10 rounded-lg group-hover:bg-accent-primary/20 transition-colors duration-200">
@@ -69,7 +69,7 @@ const ContactSection = () => {
                   href="https://www.linkedin.com/in/pranjalkumar1024/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-4 p-4 bg-card rounded-lg wabi-shadow hover:bg-accent/5 transition-all duration-200 group"
+                  className="flex items-center space-x-4 p-4 bg-card rounded-lg wabi-shadow hover:bg-accent/5 transition-all duration-200 group scroll-slide-left scroll-delay-600"
                   data-testid="link-contact-linkedin"
                 >
                   <div className="p-3 bg-accent-primary/10 rounded-lg group-hover:bg-accent-primary/20 transition-colors duration-200">
@@ -87,7 +87,7 @@ const ContactSection = () => {
           </div>
 
           {/* Resume Download */}
-          <div className="lg:col-span-4 lg:col-start-9 animate-slide-up">
+          <div className="lg:col-span-4 lg:col-start-9 scroll-scale-up scroll-delay-400">
             <div className="p-8 bg-gradient-to-br from-accent-primary/5 to-accent-primary/10 rounded-2xl border border-accent-primary/20">
               <h3 className="text-xl font-semibold mb-4" data-testid="heading-resume">Resume</h3>
               <p className="text-neutral-600 dark:text-neutral-400 mb-6 text-sm leading-relaxed" data-testid="text-resume-description">

@@ -42,10 +42,10 @@ const CertificationsSection = () => {
     <section id="certifications" className="py-20 lg:py-32 bg-neutral-100/50 dark:bg-neutral-800/30 organic-bg">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-slide-up" data-testid="heading-certifications">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 scroll-fade-in scroll-delay-100" data-testid="heading-certifications">
             <span className="text-accent-primary">Certifications</span>
           </h2>
-          <p className="text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto animate-slide-up" data-testid="text-certifications-subtitle">
+          <p className="text-neutral-500 dark:text-neutral-400 max-w-2xl mx-auto scroll-fade-in scroll-delay-200" data-testid="text-certifications-subtitle">
             {error ? 'Error loading certifications' : 'Professional certifications and achievements in cybersecurity and web development'}
           </p>
         </div>
@@ -80,7 +80,7 @@ const CertificationsSection = () => {
             certifications.map((cert, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-lg wabi-shadow hover:shadow-lg transition-all duration-200 hover-lift bg-card"
+                className={`group relative overflow-hidden rounded-lg wabi-shadow hover:shadow-lg transition-all duration-200 hover-lift bg-card scroll-scale-up scroll-delay-${Math.min(300 + (index * 100), 600)}`}
                 data-testid={`card-certification-${index}`}
               >
                 <div className="aspect-[4/3] overflow-hidden">

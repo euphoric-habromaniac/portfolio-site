@@ -45,10 +45,10 @@ const ProjectsSection = () => {
     <section id="projects" className="py-20 lg:py-32">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold animate-slide-up" data-testid="heading-projects">
+          <h2 className="text-3xl md:text-4xl font-bold scroll-fade-in scroll-delay-100" data-testid="heading-projects">
             Selected <span className="text-accent-primary">Work</span>
           </h2>
-          <p className="text-neutral-500 dark:text-neutral-400 mt-4 lg:mt-0 lg:max-w-md animate-slide-up" data-testid="text-projects-subtitle">
+          <p className="text-neutral-500 dark:text-neutral-400 mt-4 lg:mt-0 lg:max-w-md scroll-slide-right scroll-delay-200" data-testid="text-projects-subtitle">
             {error ? 'Error loading projects' : 'A showcase of my cybersecurity and development projects'}
           </p>
         </div>
@@ -83,7 +83,7 @@ const ProjectsSection = () => {
             projects.map((project, index) => (
               <Card 
                 key={project.slug} 
-                className="hover-lift wabi-shadow hover:shadow-lg transition-all duration-200 group"
+                className={`hover-lift wabi-shadow hover:shadow-lg transition-all duration-200 group scroll-scale-up scroll-delay-${Math.min(300 + (index * 100), 600)}`}
                 data-testid={`card-project-${project.slug}`}
               >
                 {project.image && (

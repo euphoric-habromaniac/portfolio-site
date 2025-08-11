@@ -15,10 +15,10 @@ const ExperienceSection = () => {
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-4">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 animate-slide-up" data-testid="heading-experience">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 scroll-fade-in scroll-delay-100" data-testid="heading-experience">
               <span className="text-accent-primary">Experience</span>
             </h2>
-            <p className="text-neutral-500 dark:text-neutral-400 animate-slide-up" data-testid="text-experience-subtitle">
+            <p className="text-neutral-500 dark:text-neutral-400 scroll-fade-in scroll-delay-200" data-testid="text-experience-subtitle">
               Professional journey and key roles in cybersecurity and web development
             </p>
           </div>
@@ -29,7 +29,7 @@ const ExperienceSection = () => {
               {experiences.map((experience, index) => (
                 <div
                   key={index}
-                  className="relative pl-8 pb-8 border-l-2 border-accent-primary/30 animate-slide-up last:pb-0"
+                  className="relative pl-8 pb-8 border-l-2 border-accent-primary/30 scroll-slide-right scroll-delay-300 last:pb-0"
                   data-testid={`experience-${index}`}
                 >
                   <div className="absolute -left-2 top-0 w-4 h-4 bg-accent-primary rounded-full" />

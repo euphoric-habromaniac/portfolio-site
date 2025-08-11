@@ -7,8 +7,11 @@ import ExperienceSection from "@/components/experience-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 import CursorBackground from "@/components/cursor-background";
+import { useScrollAnimations } from "@/hooks/use-scroll-animation";
 
 const Home = () => {
+  useScrollAnimations();
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <CursorBackground />

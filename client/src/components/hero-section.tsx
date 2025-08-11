@@ -28,13 +28,13 @@ const HeroSection = () => {
       <div className="max-w-6xl mx-auto px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-12 gap-8 items-center">
           {/* Main Content - Asymmetrically positioned */}
-          <div className="lg:col-span-7 lg:col-start-2 animate-fade-in">
+          <div className="lg:col-span-7 lg:col-start-2">
             <div className="space-y-6">
               <div className="space-y-2">
-                <p className="text-sm font-medium text-accent-primary tracking-wide uppercase">
+                <p className="text-sm font-medium text-accent-primary tracking-wide uppercase scroll-fade-in scroll-delay-100">
                   Delhi, India
                 </p>
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight scroll-slide-left scroll-delay-200">
                   <a 
                     href="#resume-download" 
                     onClick={(e) => {
@@ -53,7 +53,7 @@ const HeroSection = () => {
                 </h1>
               </div>
 
-              <div className="max-w-lg">
+              <div className="max-w-lg scroll-fade-in scroll-delay-300">
                 <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed" data-testid="text-tagline">
                   Breaking systems and making them better
                 </p>
@@ -62,7 +62,7 @@ const HeroSection = () => {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-6">
+              <div className="flex flex-col sm:flex-row gap-4 pt-6 scroll-scale-up scroll-delay-400">
                 <a
                   href="#projects"
                   onClick={(e) => handleNavClick(e, "#projects")}
@@ -84,7 +84,7 @@ const HeroSection = () => {
           </div>
 
           {/* Floating Elements */}
-          <div className="lg:col-span-4 lg:col-start-9 relative hidden lg:block">
+          <div className="lg:col-span-4 lg:col-start-9 relative hidden lg:block scroll-scale-up scroll-delay-500">
             <div className="animate-float">
               <div className="w-64 h-64 bg-gradient-to-br from-accent-primary/20 to-accent-primary/5 rounded-full blur-3xl" />
             </div>
@@ -97,7 +97,7 @@ const HeroSection = () => {
             href="https://github.com/euphoric-habromaniac"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-card border border-border/20 rounded-lg hover:border-accent-primary hover:text-accent-primary transition-all duration-200 wabi-shadow"
+            className="p-3 bg-card border border-border/20 rounded-lg hover:border-accent-primary hover:text-accent-primary transition-all duration-200 wabi-shadow scroll-slide-left scroll-delay-600"
             aria-label="GitHub Profile"
             data-testid="link-github-sidebar"
           >
@@ -107,7 +107,7 @@ const HeroSection = () => {
             href="https://www.linkedin.com/in/pranjalkumar1024/"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-card border border-border/20 rounded-lg hover:border-accent-primary hover:text-accent-primary transition-all duration-200 wabi-shadow"
+            className="p-3 bg-card border border-border/20 rounded-lg hover:border-accent-primary hover:text-accent-primary transition-all duration-200 wabi-shadow scroll-slide-left scroll-delay-700"
             aria-label="LinkedIn Profile"
             data-testid="link-linkedin-sidebar"
           >
