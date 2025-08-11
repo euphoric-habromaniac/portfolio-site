@@ -1,0 +1,71 @@
+create a fully responsive, high-performance personal portfolio website that looks like it was designed by a top-tier design agency, with a minimalist “wabi-sabi” aesthetic and seamless dark/light mode (respect system theme but with a toggle button).
+
+requirements:
+
+must have perfect responsiveness across desktop, tablet, and mobile.
+
+must be fast and optimized (lazy-loading images, preloading fonts, proper seo/meta tags, semantic html).
+
+clean, semantic, accessible markup with aria attributes and proper heading hierarchy.
+
+file structure must be human-friendly so i can easily add new projects, certifications, or edit content without touching the main code.
+
+example: /projects folder where each project is a separate markdown/json file or folder with its own images.
+
+/certifications folder for certificate images that auto-appear in the certifications section.
+
+each project must have its own expandable page (clicking on a project opens a dedicated project details page with images, description, tech used, etc.).
+
+the design should feature generous whitespace, intentional asymmetry, high-quality typography, and subtle micro-interactions (smooth hover states, fade/slide animations under 300ms).
+
+keep color palette minimal (neutral tones + one muted accent color) with subtle textures for depth.
+
+components needed:
+
+home page with name, tagline, and quick links
+
+about section with short bio and career interests
+
+projects grid (with per-project pages)
+
+certifications gallery (pull images automatically from /certifications)
+
+experience section with roles, companies, and dates
+
+downloadable resume button (link will be provided later)
+
+contact section with email & social links
+
+integrate social links (github, linkedin) prominently but cleanly.
+
+use smooth page transitions and performance-friendly animations.
+
+code must be cleanly organized with comments explaining where to update text, images, and add new content.
+
+make sure the final build is self-hostable on cloudflare pages with zero external dependencies beyond standard cdn fonts/icons.
+
+no dummy lorem ipsum in final — use the following real data:
+
+name: pranjal kumar
+
+tagline: breaking systems and making them better
+
+location: delhi, india
+
+email: contact@pranjalkumar.com
+
+github: https://github.com/euphoric-habromaniac
+
+linkedin: https://www.linkedin.com/in/pranjalkumar1024/
+
+career interest: cybersecurity
+
+experience: ongoing internship at hitech infovision as web development & security intern
+
+leave projects list empty for now (load from /projects)
+
+leave certifications empty but auto-load from /certifications folder
+
+downloadable resume button (link to be added later)
+
+the end result should look like something that cost ₹50k+, be easy to maintain, and run blazingly fast while still looking premium.
