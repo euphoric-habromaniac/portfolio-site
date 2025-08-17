@@ -46,7 +46,7 @@ const HeroSection = () => {
                     data-testid="link-name-resume"
                   >
                     <span className="block" data-testid="text-name-first">Pranjal</span>
-                    <span className="block text-neutral-500 dark:text-neutral-400" data-testid="text-name-last">
+                    <span className="block text-neutral-500 dark:text-foreground" data-testid="text-name-last">
                       Kumar
                     </span>
                   </a>
@@ -54,10 +54,10 @@ const HeroSection = () => {
               </div>
 
               <div className="max-w-lg scroll-fade-in scroll-delay-300">
-                <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed" data-testid="text-tagline">
+                <p className="text-lg md:text-xl text-neutral-600 dark:text-foreground leading-relaxed" data-testid="text-tagline">
                   Breaking systems and making them better
                 </p>
-                <p className="mt-4 text-neutral-500 dark:text-neutral-400" data-testid="text-role">
+                <p className="mt-4 text-neutral-500 dark:text-foreground" data-testid="text-role">
                   Security researcher • Web development intern • Book enthusiast
                 </p>
               </div>
@@ -66,7 +66,7 @@ const HeroSection = () => {
                 <a
                   href="#projects"
                   onClick={(e) => handleNavClick(e, "#projects")}
-                  className="inline-flex items-center px-8 py-3 bg-accent-primary hover:bg-accent-hover text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 wabi-shadow"
+                  className="inline-flex items-center px-8 py-3 bg-accent-primary hover:bg-accent-hover text-foreground font-medium rounded-lg transition-all duration-200 transform hover:scale-105 wabi-shadow"
                   data-testid="button-view-work"
                 >
                   View Work

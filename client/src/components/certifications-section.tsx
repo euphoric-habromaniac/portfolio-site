@@ -20,7 +20,7 @@ const CertificationsSection = () => {
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6 scroll-slide-up">
             Certifications & Achievements
           </h2>
-          <p className="text-lg text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto leading-relaxed scroll-slide-up scroll-delay-200">
+          <p className="text-lg text-neutral-600 dark:text-foreground max-w-2xl mx-auto leading-relaxed scroll-slide-up scroll-delay-200">
             Continuous learning through industry-recognized certifications and 
             professional development courses that keep me at the forefront of technology.
           </p>
@@ -45,10 +45,10 @@ const CertificationsSection = () => {
             <div className="lg:col-span-4 text-center py-16 animate-fade-in">
               <div className="max-w-md mx-auto">
                 <Award className="h-12 w-12 text-neutral-400 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-neutral-600 dark:text-neutral-400 mb-2" data-testid="text-no-certifications">
+                <h3 className="text-lg font-semibold text-neutral-600 dark:text-foreground mb-2" data-testid="text-no-certifications">
                   No Certifications Yet
                 </h3>
-                <p className="text-neutral-500 dark:text-neutral-500 text-sm" data-testid="text-certifications-empty-state">
+                <p className="text-neutral-500 dark:text-foreground text-sm" data-testid="text-certifications-empty-state">
                   Certifications will be automatically loaded from the <code className="bg-neutral-100 dark:bg-neutral-800 px-1 rounded text-xs">/certifications</code> directory
                 </p>
               </div>
@@ -57,10 +57,10 @@ const CertificationsSection = () => {
             <div className="lg:col-span-4 text-center py-16 animate-fade-in">
               <div className="max-w-md mx-auto">
                 <Award className="h-12 w-12 text-red-400 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-red-600 dark:text-red-400 mb-2" data-testid="text-certifications-error">
+                <h3 className="text-lg font-semibold text-red-600 dark:text-foreground mb-2" data-testid="text-certifications-error">
                   Error Loading Certifications
                 </h3>
-                <p className="text-neutral-500 dark:text-neutral-500 text-sm" data-testid="text-certifications-error-message">
+                <p className="text-neutral-500 dark:text-foreground text-sm" data-testid="text-certifications-error-message">
                   {error}
                 </p>
               </div>
@@ -95,7 +95,7 @@ const CertificationsSection = () => {
                       </h3>
                     )}
                     {cert.date && (
-                      <p className="text-xs text-neutral-200 text-center mt-1" data-testid={`text-certification-date-${index}`}>
+                      <p className="text-xs text-foreground text-center mt-1" data-testid={`text-certification-date-${index}`}> 
                         {cert.date}
                       </p>
                     )}
@@ -108,7 +108,7 @@ const CertificationsSection = () => {
                       href={cert.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="opacity-0 group-hover:opacity-100 bg-white text-black px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                      className="opacity-0 group-hover:opacity-100 bg-white text-foreground px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
                       data-testid={`link-certification-${index}`}
                     >
                       View Tag

@@ -18,6 +18,9 @@ function Router() {
   );
 }
 
+
+import { useTheme } from "@/components/theme-provider";
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -28,6 +31,19 @@ function App() {
         </TooltipProvider>
       </ThemeProvider>
     </QueryClientProvider>
+  );
+}
+
+function ThemeToggle() {
+  const { theme, setTheme } = useTheme();
+  const isDark = theme === "dark" || (theme === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  return (
+    <button
+      style={{ position: "fixed", top: 16, right: 16, zIndex: 1000 }}
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+    >
+      {isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
+    </button>
   );
 }
 

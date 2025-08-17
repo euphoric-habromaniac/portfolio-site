@@ -27,15 +27,20 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
     setIsSubmitting(true);
 
     try {
-      // In a real implementation, this would send the email via an API
-      // For now, we'll simulate the process and show a success message
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
       toast({
         title: "Message sent successfully!",
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
-      
       setFormData({ name: "", email: "", subject: "", message: "" });
       onClose();
     } catch (error) {
@@ -59,26 +64,36 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 dark:bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <Card className="w-full max-w-lg max-h-[90vh] overflow-y-auto">
-        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
-          <CardTitle className="text-xl font-semibold" data-testid="heading-contact-form">
+    <div
+      className="fixed inset-0 bg-black/30 dark:bg-black/70 backdrop-blur-lg z-50 flex items-center justify-center p-4 transition-all duration-300"
+      onClick={e => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
+      <Card
+  className="w-full max-w-md max-h-[90vh] overflow-y-auto text-foreground bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl shadow-lg p-8 transition-all duration-300"
+        style={{ boxShadow: "0 4px 24px rgba(0,0,0,0.08)" }}
+        onClick={e => e.stopPropagation()}
+      >
+        <CardHeader className="flex flex-row items-center justify-between pb-2 border-b border-neutral-100 dark:border-neutral-800">
+          <CardTitle className="text-lg font-medium tracking-tight" data-testid="heading-contact-form">
             Get In Touch
           </CardTitle>
           <Button
             variant="ghost"
             size="icon"
             onClick={onClose}
-            className="rounded-full"
+            className="rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800"
             data-testid="button-close-contact-form"
+            aria-label="Close contact form"
           >
-            <X className="h-4 w-4" />
+            <X className="h-5 w-5" />
           </Button>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4 mt-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="space-y-2">
+              <div className="space-y-1">
                 <Label htmlFor="name">Name *</Label>
                 <Input
                   id="name"
@@ -90,7 +105,7 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
                   data-testid="input-contact-name"
                 />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-1">
                 <Label htmlFor="email">Email *</Label>
                 <Input
                   id="email"
@@ -105,7 +120,7 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
               </div>
             </div>
             
-            <div className="space-y-2">
+            <div className="space-y-1">
               <Label htmlFor="subject">Subject *</Label>
               <Input
                 id="subject"
@@ -118,7 +133,7 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
               />
             </div>
             
-            <div className="space-y-2">
+            <div className="space-y-1">
               <Label htmlFor="message">Message *</Label>
               <Textarea
                 id="message"
@@ -132,11 +147,11 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
               />
             </div>
             
-            <div className="flex gap-3 pt-4">
+            <div className="flex gap-2 pt-4">
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex-1"
+                className="flex-1 bg-neutral-900 text-white dark:bg-neutral-800 dark:text-white rounded-lg shadow-none hover:bg-neutral-800 dark:hover:bg-neutral-700 transition-colors duration-200"
                 data-testid="button-send-message"
               >
                 {isSubmitting ? (
@@ -150,8 +165,9 @@ const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
               </Button>
               <Button
                 type="button"
-                variant="outline"
+                variant="ghost"
                 onClick={onClose}
+                className="flex-1 text-neutral-500 hover:text-foreground dark:text-neutral-400 dark:hover:text-foreground rounded-lg shadow-none transition-colors duration-200"
                 data-testid="button-cancel-contact"
               >
                 Cancel

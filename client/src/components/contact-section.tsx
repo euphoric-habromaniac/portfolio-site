@@ -40,7 +40,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-medium" data-testid="text-email-label">Email</h3>
-                  <p className="text-neutral-500 dark:text-neutral-400 text-sm" data-testid="text-email-address">
+                  <p className="text-neutral-500 dark:text-foreground text-sm" data-testid="text-email-address">
                     contact@pranjalkumar.com
                   </p>
                 </div>
@@ -59,7 +59,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h3 className="font-medium" data-testid="text-github-label">GitHub</h3>
-                    <p className="text-neutral-500 dark:text-neutral-400 text-sm" data-testid="text-github-description">
+                    <p className="text-neutral-500 dark:text-foreground text-sm" data-testid="text-github-description">
                       View Code
                     </p>
                   </div>
@@ -77,7 +77,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h3 className="font-medium" data-testid="text-linkedin-label">LinkedIn</h3>
-                    <p className="text-neutral-500 dark:text-neutral-400 text-sm" data-testid="text-linkedin-description">
+                    <p className="text-neutral-500 dark:text-foreground text-sm" data-testid="text-linkedin-description">
                       Connect
                     </p>
                   </div>
@@ -90,7 +90,7 @@ const ContactSection = () => {
           <div className="lg:col-span-4 lg:col-start-9 scroll-scale-up scroll-delay-400">
             <div className="p-8 bg-gradient-to-br from-accent-primary/5 to-accent-primary/10 rounded-2xl border border-accent-primary/20">
               <h3 className="text-xl font-semibold mb-4" data-testid="heading-resume">Resume</h3>
-              <p className="text-neutral-600 dark:text-neutral-400 mb-6 text-sm leading-relaxed" data-testid="text-resume-description">
+              <p className="text-neutral-600 dark:text-foreground mb-6 text-sm leading-relaxed" data-testid="text-resume-description">
                 Download my complete resume with detailed experience, skills, and project information.
               </p>
               <button

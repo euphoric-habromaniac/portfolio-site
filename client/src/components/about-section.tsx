@@ -14,14 +14,14 @@ const AboutSection = () => {
             </h2>
             
             {/* Subtle literary quote */}
-            <blockquote className="text-sm italic text-neutral-500 dark:text-neutral-400 border-l-2 border-accent-primary/30 pl-4 mb-8 scroll-slide-left scroll-delay-200">
+            <blockquote className="text-sm italic text-neutral-500 dark:text-foreground border-l-2 border-accent-primary/30 pl-4 mb-8 scroll-slide-left scroll-delay-200">
               "In every book lies the universe of another mind"
             </blockquote>
           </div>
 
           <div className="lg:col-span-6 lg:col-start-7 space-y-8">
             <div className="prose prose-lg max-w-none scroll-fade-in scroll-delay-300">
-              <p className="cozy-text text-lg" data-testid="text-about-paragraph-1">
+              <p className="cozy-text text-lg text-neutral-500 dark:text-foreground" data-testid="text-about-paragraph-1">
                 I'm passionate about finding vulnerabilities that others miss and building secure solutions. 
                 Currently a Web Development & Security Intern at Hitech Infovision.
               </p>
@@ -33,7 +33,7 @@ const AboutSection = () => {
                   <div className="w-2 h-8 bg-accent-primary/30 rounded-full"></div>
                   <h3 className="font-semibold text-accent-primary">Focus Areas</h3>
                 </div>
-                <ul className="text-sm text-neutral-600 dark:text-neutral-300 space-y-2">
+                <ul className="text-sm text-neutral-600 dark:text-foreground space-y-2">
                   <li className="flex items-center gap-2">
                     <span className="w-1 h-1 bg-accent-primary rounded-full"></span>
                     Web Security Assessment
@@ -54,7 +54,7 @@ const AboutSection = () => {
                   <div className="w-2 h-8 bg-accent-primary/30 rounded-full"></div>
                   <h3 className="font-semibold text-accent-primary">Beyond Code</h3>
                 </div>
-                <p className="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                <p className="text-sm text-neutral-600 dark:text-foreground leading-relaxed">
                   When I'm not breaking systems, you'll find me lost in books or crafting poetry. 
                   I believe stories and security both require understanding the art of the possible.
                 </p>
