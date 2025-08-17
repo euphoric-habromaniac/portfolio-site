@@ -60,7 +60,17 @@ echo Press Ctrl+C to stop the servers
 echo ==================================
 echo.
 
+REM Copy local configuration
+if exist "package.local.json" (
+    echo.
+    echo 📋 Setting up local configuration...
+    copy "package.local.json" "package.json" >nul
+    echo ✅ Configuration updated
+)
+
 REM Start both servers
+echo.
+echo 🚀 Starting servers...
 npm run dev
 
 pause

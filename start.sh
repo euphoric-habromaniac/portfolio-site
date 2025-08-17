@@ -57,5 +57,13 @@ echo ""
 echo "Press Ctrl+C to stop the servers"
 echo "=================================="
 
+# Copy local configuration
+if [ -f "package.local.json" ]; then
+    echo "📋 Setting up local configuration..."
+    cp package.local.json package.json
+    echo "✅ Configuration updated"
+fi
+
 # Start both servers
+echo "🚀 Starting servers..."
 npm run dev

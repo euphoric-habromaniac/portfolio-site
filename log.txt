@@ -13,17 +13,23 @@ This is a full-stack personal portfolio website for Pranjal Kumar, built with Re
 ## How to Run Locally
 
 ### Quick Start (Recommended)
+1. Replace `package.json` with `package.local.json`: `cp package.local.json package.json`
+2. Install dependencies: `npm install`
+3. Start servers: `npm run dev`
+4. Open browser to: http://localhost:3000
+
+### Alternative: Use Startup Scripts
 1. **Windows**: Double-click `start.bat`
 2. **Mac/Linux**: Run `./start.sh` in terminal
-3. Open browser to: http://localhost:3000
 
-### Manual Setup
+### Manual Setup (Step by Step)
 1. Install Node.js 18+ from https://nodejs.org
 2. Open terminal in project directory
-3. Run: `npm install` (installs all dependencies)
-4. Run: `npm run dev` (starts both servers)
-5. Frontend: http://localhost:3000
-6. Backend API: http://localhost:5000
+3. Copy local config: `cp package.local.json package.json`
+4. Run: `npm install` (installs all dependencies)
+5. Run: `npm run dev` (starts both servers)
+6. Frontend: http://localhost:3000
+7. Backend API: http://localhost:5000
 
 ### What the Scripts Do
 - `start.sh` / `start.bat`: Automated setup and launch

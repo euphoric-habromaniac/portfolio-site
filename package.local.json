@@ -6,7 +6,7 @@
   "description": "Personal portfolio website for Pranjal Kumar - cybersecurity enthusiast and web developer",
   "scripts": {
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
-    "dev:server": "NODE_ENV=development tsx server/index.ts",
+    "dev:server": "NODE_ENV=development tsx server/index.local.ts",
     "dev:client": "vite --config vite.config.local.ts",
     "build": "npm run build:client && npm run build:server",
     "build:client": "vite build --config vite.config.local.ts",
