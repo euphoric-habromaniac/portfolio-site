@@ -28,10 +28,19 @@ app.use((req, res, next) => {
 // API routes
 registerRoutes(app);
 
+// Serve static files in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../dist/public')));
+}
+
 // Serve React app for all non-API routes (SPA support)
 app.get('*', (req, res) => {
   if (!req.path.startsWith('/api')) {
-    res.sendFile(path.join(__dirname, '../dist/public/index.html'));
+    if (process.env.NODE_ENV === 'production') {
+      res.sendFile(path.join(__dirname, '../dist/public/index.html'));
+    } else {
+      res.sendFile(path.join(__dirname, '../client/public/index.html'));
+    }
   } else {
     res.status(404).json({ error: 'API endpoint not found' });
   }

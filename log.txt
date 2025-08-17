@@ -230,10 +230,19 @@ NODE_ENV=development
 - `vite.config.local.ts`: Vite configuration with CORS and proxy setup
 - `server/index.local.ts`: Express server optimized for local development
 - `start.sh` / `start.bat`: Automated startup scripts
+- `deploy.sh` / `deploy.bat`: Automated deployment scripts
 - `README.md`: Complete project documentation
 - `.env.example`: Environment variables template
 - `.gitignore`: Git ignore patterns
 - Sample content files in `projects/` and `certifications/`
+
+## Deployment Automation
+- `deploy.sh` / `deploy.bat`: Complete automated deployment
+- `start-production.sh` / `start-production.bat`: Production server startup
+- `verify-deployment.sh` / `verify-deployment.bat`: Deployment verification
+- `ecosystem.config.js`: PM2 process management configuration
+- `Dockerfile` & `docker-compose.yml`: Container deployment support
+- `DEPLOYMENT_SUMMARY.md`: Complete deployment guide
 
 ## File Structure for Local Development
 ```
