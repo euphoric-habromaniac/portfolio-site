@@ -16,6 +16,12 @@ Preferred communication style: Simple, everyday language.
 - Added comprehensive cozy styling system with warm card designs, enhanced buttons, and cozy text styling
 - Applied cozy theme across all components (hero, projects, about, contact sections)
 - Enhanced visual appeal with warmer, more inviting design elements
+- Fixed theme toggle icons: dark mode now shows light mode icons and vice versa
+- Replaced gradient background with cozy radial gradients and subtle texture overlay
+- Updated "View Work" button text to be black in light mode and white in dark mode
+- Added comprehensive cozy styling system with warm card designs, enhanced buttons, and cozy text styling
+- Applied cozy theme across all components (hero, projects, about, contact sections)
+- Enhanced visual appeal with warmer, more inviting design elements
 
 # System Architecture
 
