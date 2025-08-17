@@ -1,7 +1,10 @@
 {
-  "name": "LinkedIn Learning Certificate",
+  "title": "Learning TypeScript",
   "issuer": "LinkedIn Learning",
-  "date": "2024",
-  "url": "https://www.linkedin.com/learning/certificates/1eeca5641ec34e61abfe4620777e6cadd9d9e9f500c80e75fc2e9449d97b0790",
-  "image": "https://media.licdn.com/dms/image/sync/D4E27AQG8kluC3HFAfw/articleshare-shrink_800/0/1705311800584?e=2147483647&v=beta&t=KJY0T-P7Ow24qy2l9Q3LxY1O9Zm_7nrSL1-8xEw_7pQ"
+  "date": "2024-01-15",
+  "image": "/certificates/linkedin-typescript-certificate.jpg",
+  "url": "https://www.linkedin.com/learning/certificates/learning-typescript",
+  "skills": ["TypeScript", "Static Typing", "JavaScript", "Type Safety", "Modern Development"],
+  "category": "Programming Languages",
+  "description": "Comprehensive course covering TypeScript fundamentals, advanced types, interfaces, generics, and best practices for type-safe JavaScript development."
 }

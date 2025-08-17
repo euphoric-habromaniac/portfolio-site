@@ -67,51 +67,59 @@ This is a full-stack personal portfolio website for Pranjal Kumar, built with Re
 
 ## Adding New Projects
 
-### Step 1: Create Project File
-Create a new JSON file in the `/projects` folder:
+### Quick Steps:
+1. **Create JSON file**: `projects/project-name.json` with required fields
+2. **Add image**: Save to `client/public/images/projects/`
+3. **Restart server**: `npm run dev`
+
+**Example Project File:**
 ```json
 {
   "slug": "my-awesome-project",
   "title": "My Awesome Project",
-  "description": "A brief description of what this project does",
-  "image": "/path/to/image.jpg",
+  "description": "A brief description of what this project does (max 150 chars)",
+  "image": "/images/projects/project-screenshot.jpg",
   "tech": ["React", "TypeScript", "Node.js"],
   "url": "https://github.com/yourname/project",
-  "content": "Detailed markdown content about the project..."
+  "content": "## Overview\n\nDetailed markdown content..."
 }
 ```
 
-### Step 2: Add Project Image (Optional)
-- Place image in `client/public/` folder
-- Reference it in the JSON file's "image" field
-- Supported formats: JPG, PNG, SVG
-
-### Step 3: Restart Server
-- Stop the development server (Ctrl+C)
-- Run `npm run dev` again
-- Your project will appear automatically
+**Required Image Specifications:**
+- Location: `client/public/images/projects/`
+- Size: 1200x800px recommended (3:2 ratio)
+- Format: JPG, PNG, WebP
+- File size: Under 1MB
 
 ## Adding New Certifications
 
-### Step 1: Create Certification File
-Create a new JSON file in the `/certifications` folder:
+### Quick Steps:
+1. **Prepare certificate**: Screenshot or download certificate image
+2. **Create JSON file**: `certifications/cert-name.json`
+3. **Add image**: Save to `client/public/certificates/`
+4. **Restart server**: `npm run dev`
+
+**Example Certification File:**
 ```json
 {
-  "title": "Certification Name",
-  "issuer": "Issuing Organization",
-  "date": "2024-01-01",
-  "image": "/path/to/certificate.jpg",
-  "url": "https://link-to-certificate.com",
-  "skills": ["Skill 1", "Skill 2", "Skill 3"]
+  "title": "AWS Certified Cloud Practitioner",
+  "issuer": "Amazon Web Services",
+  "date": "2024-01-15",
+  "image": "/certificates/aws-cloud-practitioner.jpg",
+  "url": "https://aws.amazon.com/verification/12345",
+  "skills": ["Cloud Computing", "AWS Services", "Security", "Cost Optimization"],
+  "category": "Cloud Computing"
 }
 ```
 
-### Step 2: Add Certificate Image
-- Place certificate image in `client/public/` folder
-- Reference it in the JSON file's "image" field
+**Certificate Image Requirements:**
+- Location: `client/public/certificates/`
+- Size: 1200x900px recommended (4:3 ratio)
+- Format: JPG, PNG
+- Quality: High resolution, readable text
+- File size: Under 2MB
 
-### Step 3: Restart Server
-- Your certification will appear automatically after restart
+**See HOW_TO_ADD_CONTENT.md for detailed step-by-step guides**
 
 ## Package Dependencies
 

@@ -1,35 +1,49 @@
 # Personal Portfolio Website
 
-A modern, responsive portfolio website built with React, TypeScript, and Express.js. Features a cozy design with dark/light theme support and file-based content management.
+A modern, fully responsive personal portfolio website built with React 18, TypeScript, and Express.js. Features a cozy design aesthetic with seamless dark/light theme switching and file-based content management system.
+
+## ✨ Features
+
+- **Responsive Design**: Mobile-first approach with optimal viewing on all devices
+- **Dark/Light Theme**: Automatic system preference detection with manual toggle
+- **File-Based CMS**: Easy content management through JSON files
+- **Modern Tech Stack**: React 18, TypeScript, Tailwind CSS, Express.js
+- **Cozy Aesthetic**: Warm, inviting design with subtle animations
+- **SEO Optimized**: Proper meta tags and semantic HTML structure
+- **Production Ready**: Automated deployment with multiple hosting options
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ 
-- npm (comes with Node.js)
+- Node.js 18.0.0 or higher
+- npm 9.0.0 or higher
 
-### Local Development Setup
+### Development Setup
 
-1. **Clone the project**
-   ```bash
-   git clone <repository-url>
-   cd portfolio-website
-   ```
+**Automated Setup (Recommended):**
+```bash
+# Linux/Mac
+./start.sh
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+# Windows
+start.bat
+```
 
-3. **Start development servers**
-   ```bash
-   npm run dev
-   ```
-   This runs both backend (port 5000) and frontend (port 3000) simultaneously.
+**Manual Setup:**
+```bash
+# 1. Setup local configuration
+cp package.local.json package.json
 
-4. **Open browser**
-   - Frontend: http://localhost:3000
-   - Backend API: http://localhost:5000
+# 2. Install dependencies
+npm install
+
+# 3. Start development servers
+npm run dev
+
+# 4. Open browser
+# Frontend: http://localhost:3000
+# Backend: http://localhost:5000
+```
 
 ## 🏗️ Architecture
 
@@ -122,18 +136,39 @@ npm run check        # TypeScript type checking
 
 ## 🚀 Production Deployment
 
-1. **Build the application**
-   ```bash
-   npm run build
-   ```
+**Automated Deployment:**
+```bash
+# Linux/Mac
+./deploy.sh
 
-2. **Deploy the `dist` folder** to your hosting provider
+# Windows
+deploy.bat
+```
 
-3. **Configure environment variables** (if needed):
-   - `PORT`: Server port (default: 5000)
-   - `NODE_ENV`: Set to 'production'
+**Manual Deployment:**
+```bash
+# 1. Build application
+npm run build
 
-4. **Ensure SPA routing** - Configure your server to serve `index.html` for all non-API routes
+# 2. Choose deployment method:
+
+# Option A: Direct Server
+./start-production.sh
+
+# Option B: PM2 Process Manager
+npm install -g pm2
+pm2 start ecosystem.config.js --env production
+
+# Option C: Docker
+docker-compose up -d
+```
+
+The automated deployment script handles:
+- Environment setup and validation
+- Production builds (frontend + backend)
+- Configuration file generation
+- Multiple deployment options
+- Health checks and verification
 
 ## 🔧 Environment Variables
 
