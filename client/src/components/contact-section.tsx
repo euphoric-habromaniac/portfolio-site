@@ -24,7 +24,7 @@ const ContactSection = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 scroll-fade-in scroll-delay-100" data-testid="heading-contact">
               Let's <span className="text-accent-primary">Connect</span>
             </h2>
-            <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-8 scroll-fade-in scroll-delay-200" data-testid="text-contact-description">
+            <p className="cozy-text text-lg mb-8 scroll-fade-in scroll-delay-200" data-testid="text-contact-description">
               Always open to discussing security research, potential collaborations, book recommendations, or just having a good conversation.
             </p>
 
@@ -32,7 +32,7 @@ const ContactSection = () => {
             <div className="space-y-4 scroll-slide-left scroll-delay-300">
               <a
                 href="mailto:contact@pranjalkumar.com"
-                className="flex items-center space-x-4 p-4 bg-card rounded-lg wabi-shadow hover:bg-accent/5 transition-all duration-200 group scroll-slide-left scroll-delay-400"
+                className="cozy-card flex items-center space-x-4 p-4 hover:bg-accent/5 transition-all duration-200 group scroll-slide-left scroll-delay-400"
                 data-testid="link-contact-email"
               >
                 <div className="p-3 bg-accent-primary/10 rounded-lg group-hover:bg-accent-primary/20 transition-colors duration-200">
@@ -51,7 +51,7 @@ const ContactSection = () => {
                   href="https://github.com/euphoric-habromaniac"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-4 p-4 bg-card rounded-lg wabi-shadow hover:bg-accent/5 transition-all duration-200 group scroll-slide-left scroll-delay-500"
+                  className="cozy-card flex items-center space-x-4 p-4 hover:bg-accent/5 transition-all duration-200 group scroll-slide-left scroll-delay-500"
                   data-testid="link-contact-github"
                 >
                   <div className="p-3 bg-accent-primary/10 rounded-lg group-hover:bg-accent-primary/20 transition-colors duration-200">
@@ -69,7 +69,7 @@ const ContactSection = () => {
                   href="https://www.linkedin.com/in/pranjalkumar1024/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-4 p-4 bg-card rounded-lg wabi-shadow hover:bg-accent/5 transition-all duration-200 group scroll-slide-left scroll-delay-600"
+                  className="cozy-card flex items-center space-x-4 p-4 hover:bg-accent/5 transition-all duration-200 group scroll-slide-left scroll-delay-600"
                   data-testid="link-contact-linkedin"
                 >
                   <div className="p-3 bg-accent-primary/10 rounded-lg group-hover:bg-accent-primary/20 transition-colors duration-200">
@@ -95,7 +95,7 @@ const ContactSection = () => {
               </p>
               <button
                 onClick={handleResumeDownload}
-                className="inline-flex items-center px-6 py-3 bg-accent-primary hover:bg-accent-hover text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 w-full justify-center"
+                className="cozy-button w-full justify-center"
                 data-testid="button-download-resume"
               >
                 <Download className="mr-2 h-4 w-4" />

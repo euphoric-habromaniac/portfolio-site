@@ -66,7 +66,7 @@ const HeroSection = () => {
                 <a
                   href="#projects"
                   onClick={(e) => handleNavClick(e, "#projects")}
-                  className="inline-flex items-center px-8 py-3 bg-accent-primary hover:bg-accent-hover text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 wabi-shadow"
+                  className="inline-flex items-center px-8 py-3 bg-accent-primary hover:bg-accent-hover text-black dark:text-white font-medium rounded-lg transition-all duration-200 transform hover:scale-105 wabi-shadow"
                   data-testid="button-view-work"
                 >
                   View Work

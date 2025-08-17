@@ -6,6 +6,17 @@ This is a personal portfolio website for Pranjal Kumar, a cybersecurity enthusia
 
 Preferred communication style: Simple, everyday language.
 
+# Recent Changes
+
+## Migration and UI Improvements (January 17, 2025)
+- Successfully migrated from Replit Agent to standard Replit environment
+- Fixed theme toggle icons: dark mode now shows light mode icons and vice versa
+- Replaced gradient background with cozy radial gradients and subtle texture overlay
+- Updated "View Work" button text to be black in light mode and white in dark mode
+- Added comprehensive cozy styling system with warm card designs, enhanced buttons, and cozy text styling
+- Applied cozy theme across all components (hero, projects, about, contact sections)
+- Enhanced visual appeal with warmer, more inviting design elements
+
 # System Architecture
 
 ## Frontend Architecture

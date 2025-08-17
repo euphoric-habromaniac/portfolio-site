@@ -68,7 +68,7 @@ const ProjectsSection = () => {
                   Error Loading Projects
                 </h3>
                 <p className="text-neutral-500 dark:text-neutral-500 text-sm" data-testid="text-projects-error-message">
-                  {error}
+                  {error instanceof Error ? error.message : 'An error occurred loading projects'}
                 </p>
               </div>
             </div>
@@ -76,7 +76,7 @@ const ProjectsSection = () => {
             projects.map((project, index) => (
               <Card 
                 key={project.slug} 
-                className={`hover-lift wabi-shadow hover:shadow-lg transition-all duration-200 group scroll-scale-up ${
+                className={`cozy-card hover-lift transition-all duration-300 group scroll-scale-up ${
                   index === 0 ? 'scroll-delay-300' : 
                   index === 1 ? 'scroll-delay-400' : 
                   'scroll-delay-500'
@@ -114,7 +114,7 @@ const ProjectsSection = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-neutral-600 dark:text-neutral-300 text-sm leading-relaxed mb-4" data-testid={`text-project-description-${project.slug}`}>
+                  <p className="cozy-text text-sm mb-4" data-testid={`text-project-description-${project.slug}`}>
                     {project.description}
                   </p>
                   
