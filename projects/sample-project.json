@@ -1,0 +1,9 @@
+{
+  "slug": "vulnerability-scanner",
+  "title": "Advanced Vulnerability Scanner",
+  "description": "A comprehensive security scanner that identifies web application vulnerabilities with detailed reporting and remediation suggestions.",
+  "image": "/images/projects/vulnerability-scanner.jpg",
+  "tech": ["Python", "Flask", "SQLite", "HTML/CSS", "JavaScript"],
+  "url": "https://github.com/euphoric-habromaniac/vulnerability-scanner",
+  "content": "# Advanced Vulnerability Scanner\n\nThis project is a comprehensive web application vulnerability scanner designed to identify security flaws in web applications. Built with Python and Flask, it provides an intuitive interface for security testing.\n\n## Features\n\n- **SQL Injection Detection**: Automated testing for various SQL injection vulnerabilities\n- **XSS Scanning**: Cross-site scripting vulnerability identification\n- **Directory Traversal**: Path traversal vulnerability detection\n- **Detailed Reporting**: Comprehensive reports with remediation suggestions\n- **User-Friendly Interface**: Clean web interface for easy navigation\n\n## Technical Implementation\n\nThe scanner uses a modular architecture with separate modules for different vulnerability types. Each module implements specific testing techniques and provides detailed results.\n\n### Key Components\n\n1. **Scanner Engine**: Core scanning logic\n2. **Report Generator**: Creates detailed vulnerability reports\n3. **Web Interface**: Flask-based frontend\n4. **Database**: SQLite for storing scan results\n\n## Impact\n\nThis tool has helped identify critical vulnerabilities in multiple web applications, contributing to improved security posture for various projects."
+}

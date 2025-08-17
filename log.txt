@@ -1,0 +1,250 @@
+# Personal Portfolio - Complete Setup & Usage Guide
+
+## Overview
+This is a full-stack personal portfolio website for Pranjal Kumar, built with React, TypeScript, Express.js, and modern web technologies. The project uses a file-based content management system for easy updates without a database.
+
+## Architecture
+- **Frontend**: React 18 + TypeScript + Vite (client-side)
+- **Backend**: Express.js + TypeScript (API server)
+- **Styling**: Tailwind CSS + shadcn/ui components
+- **Content**: File-based (JSON files for projects/certifications)
+- **Database**: Optional PostgreSQL (uses in-memory storage by default)
+
+## How to Run Locally
+
+### Quick Start (Recommended)
+1. **Windows**: Double-click `start.bat`
+2. **Mac/Linux**: Run `./start.sh` in terminal
+3. Open browser to: http://localhost:3000
+
+### Manual Setup
+1. Install Node.js 18+ from https://nodejs.org
+2. Open terminal in project directory
+3. Run: `npm install` (installs all dependencies)
+4. Run: `npm run dev` (starts both servers)
+5. Frontend: http://localhost:3000
+6. Backend API: http://localhost:5000
+
+### What the Scripts Do
+- `start.sh` / `start.bat`: Automated setup and launch
+- Checks Node.js version (requires 18+)
+- Installs dependencies if needed
+- Creates required directories
+- Starts both frontend and backend servers
+
+### What Happens When You Run It
+- Express server starts on port 5000 (backend API)
+- Vite development server starts on port 3000 (frontend)
+- API endpoints available at /api/* (proxied to backend)
+- Hot reload enabled for both frontend and backend
+- CORS configured for local development
+- File watching for automatic restarts
+
+## Project Structure
+```
+├── client/                 # Frontend React application
+│   ├── src/
+│   │   ├── components/     # React components
+│   │   ├── pages/          # Page components
+│   │   ├── lib/           # Utility functions
+│   │   └── hooks/         # Custom React hooks
+├── server/                 # Backend Express application
+│   ├── index.ts           # Main server file
+│   ├── routes.ts          # API routes
+│   └── storage.ts         # Data storage interface
+├── shared/                 # Shared TypeScript types
+│   └── schema.ts          # Data schemas
+├── projects/              # Project content files
+├── certifications/        # Certification content files
+└── package.json           # Dependencies and scripts
+```
+
+## Adding New Projects
+
+### Step 1: Create Project File
+Create a new JSON file in the `/projects` folder:
+```json
+{
+  "slug": "my-awesome-project",
+  "title": "My Awesome Project",
+  "description": "A brief description of what this project does",
+  "image": "/path/to/image.jpg",
+  "tech": ["React", "TypeScript", "Node.js"],
+  "url": "https://github.com/yourname/project",
+  "content": "Detailed markdown content about the project..."
+}
+```
+
+### Step 2: Add Project Image (Optional)
+- Place image in `client/public/` folder
+- Reference it in the JSON file's "image" field
+- Supported formats: JPG, PNG, SVG
+
+### Step 3: Restart Server
+- Stop the development server (Ctrl+C)
+- Run `npm run dev` again
+- Your project will appear automatically
+
+## Adding New Certifications
+
+### Step 1: Create Certification File
+Create a new JSON file in the `/certifications` folder:
+```json
+{
+  "title": "Certification Name",
+  "issuer": "Issuing Organization",
+  "date": "2024-01-01",
+  "image": "/path/to/certificate.jpg",
+  "url": "https://link-to-certificate.com",
+  "skills": ["Skill 1", "Skill 2", "Skill 3"]
+}
+```
+
+### Step 2: Add Certificate Image
+- Place certificate image in `client/public/` folder
+- Reference it in the JSON file's "image" field
+
+### Step 3: Restart Server
+- Your certification will appear automatically after restart
+
+## Package Dependencies
+
+### Core Dependencies
+- **react**: Frontend framework
+- **express**: Backend web server
+- **typescript**: Type safety
+- **vite**: Build tool and dev server
+- **tailwindcss**: CSS framework
+- **drizzle-orm**: Database ORM (optional)
+
+### UI Components
+- **@radix-ui/***: Accessible UI primitives
+- **lucide-react**: Icons
+- **framer-motion**: Animations
+- **react-hook-form**: Form handling
+
+### Development Tools
+- **tsx**: TypeScript execution
+- **esbuild**: Fast bundling
+- **autoprefixer**: CSS processing
+
+## Available Scripts
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run start`: Start production server
+- `npm run check`: Type checking
+
+## Configuration Files
+
+### package.json
+Contains all dependencies and scripts
+
+### vite.config.ts
+Frontend build configuration
+
+### tailwind.config.ts
+CSS styling configuration
+
+### tsconfig.json
+TypeScript configuration
+
+## API Endpoints
+- `GET /api/projects`: Returns all projects
+- `GET /api/certifications`: Returns all certifications
+
+## Customization
+
+### Colors & Theming
+Edit `client/src/index.css` to change:
+- Color palette (CSS variables)
+- Dark/light theme colors
+- Typography settings
+
+### Content
+- Projects: Edit files in `/projects` folder
+- Certifications: Edit files in `/certifications` folder
+- Personal info: Edit components in `client/src/components/`
+
+### Layout
+- Hero section: `client/src/components/hero-section.tsx`
+- About section: `client/src/components/about-section.tsx`
+- Projects: `client/src/components/projects-section.tsx`
+- Contact: `client/src/components/contact-section.tsx`
+
+## Deployment
+1. Run `npm run build` to create production build
+2. Deploy the `dist` folder to any web server
+3. Ensure server serves index.html for all routes (SPA)
+
+## Troubleshooting
+
+### Port Already in Use
+- Change port in server/index.ts
+- Or kill process using port 5000
+
+### Dependencies Issues
+- Delete node_modules folder
+- Run `npm install` again
+
+### Build Errors
+- Run `npm run check` for TypeScript errors
+- Check console for specific error messages
+
+### Content Not Loading
+- Verify JSON file format
+- Check file names and paths
+- Restart development server
+
+## Database (Optional)
+The project can work with or without a database:
+- **Without DB**: Uses in-memory storage (default)
+- **With PostgreSQL**: Set DATABASE_URL environment variable
+
+To use PostgreSQL:
+1. Install PostgreSQL
+2. Create database
+3. Set DATABASE_URL=postgresql://user:pass@localhost:5432/dbname
+4. Run `npm run db:push` to create tables
+
+## Environment Variables
+Create `.env` file in root directory:
+```
+DATABASE_URL=postgresql://localhost:5432/portfolio
+NODE_ENV=development
+```
+
+## Support
+- Check browser console for errors
+- Verify all files are in correct locations
+- Ensure Node.js version is 18+
+- Try clearing browser cache if styling issues occur
+
+## Local Development Files Created
+- `package.local.json`: Optimized package.json for local development
+- `vite.config.local.ts`: Vite configuration with CORS and proxy setup
+- `server/index.local.ts`: Express server optimized for local development
+- `start.sh` / `start.bat`: Automated startup scripts
+- `README.md`: Complete project documentation
+- `.env.example`: Environment variables template
+- `.gitignore`: Git ignore patterns
+- Sample content files in `projects/` and `certifications/`
+
+## File Structure for Local Development
+```
+portfolio-website/
+├── start.sh / start.bat       # Quick start scripts
+├── package.local.json         # Local development package file
+├── vite.config.local.ts       # Local Vite configuration
+├── README.md                  # Project documentation
+├── log.txt                    # This comprehensive guide
+├── .env.example               # Environment template
+├── .gitignore                 # Git ignore patterns
+├── client/                    # Frontend application
+├── server/                    # Backend application
+├── projects/                  # Project content (JSON files)
+├── certifications/            # Certificate content (JSON files)
+├── shared/                    # Shared TypeScript types
+└── dist/                      # Production build output
+```
+
+Last Updated: January 17, 2025

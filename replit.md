@@ -16,6 +16,16 @@ Preferred communication style: Simple, everyday language.
 - Added comprehensive cozy styling system with warm card designs, enhanced buttons, and cozy text styling
 - Applied cozy theme across all components (hero, projects, about, contact sections)
 - Enhanced visual appeal with warmer, more inviting design elements
+- Fixed dark mode text visibility issues for better readability
+
+## Local Development Setup (January 17, 2025)
+- Created complete local development configuration
+- Added automated setup scripts (start.sh / start.bat)
+- Optimized package.json and vite.config for local development
+- Added comprehensive documentation (README.md, log.txt)
+- Created sample content files and project structure
+- Configured CORS and proxy settings for seamless local development
+- Added environment configuration templates
 - Fixed theme toggle icons: dark mode now shows light mode icons and vice versa
 - Replaced gradient background with cozy radial gradients and subtle texture overlay
 - Updated "View Work" button text to be black in light mode and white in dark mode

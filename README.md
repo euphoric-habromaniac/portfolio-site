@@ -1,134 +1,187 @@
-# Pranjal Kumar - Personal Portfolio
+# Personal Portfolio Website
 
-A premium personal portfolio website featuring a sophisticated wabi-sabi design aesthetic, interactive animations, and comprehensive content management.
+A modern, responsive portfolio website built with React, TypeScript, and Express.js. Features a cozy design with dark/light theme support and file-based content management.
 
-## Features
-
-- **Wabi-sabi Design**: Minimalist aesthetic with beautiful gradient backgrounds
-- **Scroll Animations**: Comprehensive scroll effects across all sections
-- **Dark/Light Mode**: Seamless theme switching with system preference detection
-- **Responsive Design**: Mobile-first approach with optimal experience across all devices
-- **File-based CMS**: Automatic content loading from organized directories
-- **Modern Stack**: React + TypeScript, Tailwind CSS, shadcn/ui components
-
-## Quick Start
+## 🚀 Quick Start
 
 ### Prerequisites
+- Node.js 18+ 
+- npm (comes with Node.js)
 
-- Node.js (v18 or higher)
-- npm or yarn
+### Local Development Setup
 
-### Installation
+1. **Clone the project**
+   ```bash
+   git clone <repository-url>
+   cd portfolio-website
+   ```
 
-1. Clone or download this repository
-2. Install dependencies:
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. Start the development server:
+3. **Start development servers**
    ```bash
    npm run dev
    ```
+   This runs both backend (port 5000) and frontend (port 3000) simultaneously.
 
-4. Open http://localhost:5000 in your browser
+4. **Open browser**
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:5000
 
-### Adding Content
+## 🏗️ Architecture
 
-#### Projects
-Add project files to the `/projects` directory:
-- Create `.json` files with project metadata
-- Include images in the same directory
-- Projects will be automatically loaded and displayed
+- **Frontend**: React 18 + TypeScript + Vite
+- **Backend**: Express.js + TypeScript
+- **Styling**: Tailwind CSS + shadcn/ui
+- **Content**: File-based JSON storage
+- **Icons**: Lucide React
+- **Animations**: Framer Motion
 
-Example project structure:
-```
-/projects/
-  ├── my-project.json
-  ├── my-project-image.png
-  └── another-project.json
-```
-
-#### Certifications
-Add certification images to the `/certifications` directory:
-- Supported formats: .jpg, .jpeg, .png
-- Certifications will be automatically loaded and displayed
-
-Example certification structure:
-```
-/certifications/
-  ├── cert1.jpg
-  ├── cert2.png
-  └── linkedin-learning.png
-```
-
-## Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-
-## Project Structure
+## 📁 Project Structure
 
 ```
-├── client/                 # Frontend React application
+├── client/                 # React frontend
 │   ├── src/
-│   │   ├── components/     # Reusable UI components
-│   │   ├── pages/         # Page components
-│   │   ├── hooks/         # Custom React hooks
-│   │   ├── lib/           # Utility functions
-│   │   └── types/         # TypeScript type definitions
-├── server/                # Backend Express server
-├── shared/                # Shared types and schemas
-├── projects/              # Project content files
-├── certifications/        # Certification images
-└── README.md
+│   │   ├── components/     # React components
+│   │   ├── pages/          # Page components  
+│   │   ├── lib/           # Utilities
+│   │   └── hooks/         # Custom hooks
+│   └── public/            # Static assets
+├── server/                # Express backend
+│   ├── index.ts           # Main server
+│   ├── routes.ts          # API routes
+│   └── storage.ts         # Data layer
+├── projects/              # Project content (JSON)
+├── certifications/        # Certificate content (JSON)
+├── shared/                # Shared TypeScript types
+└── dist/                  # Production build
 ```
 
-## Customization
+## 📝 Adding Content
 
-### Theme Colors
-Edit `client/src/index.css` to customize the color palette and design system variables.
+### Adding Projects
 
-### Content
-- Update personal information in the hero section components
-- Modify the about section content
-- Add your own projects and certifications to their respective directories
+1. Create `projects/my-project.json`:
+   ```json
+   {
+     "slug": "my-project",
+     "title": "My Awesome Project",
+     "description": "What this project does",
+     "image": "/images/project.jpg",
+     "tech": ["React", "TypeScript"],
+     "url": "https://github.com/user/repo",
+     "content": "Detailed project description..."
+   }
+   ```
 
-### Styling
-The project uses Tailwind CSS with shadcn/ui components. Customize styles by:
-- Editing Tailwind config in `tailwind.config.ts`
-- Modifying component styles in individual component files
-- Adding custom CSS in `client/src/index.css`
+2. Add project image to `client/public/images/`
+3. Restart the dev server
 
-## Deployment
+### Adding Certifications
 
-The project is optimized for deployment on various platforms:
+1. Create `certifications/cert-name.json`:
+   ```json
+   {
+     "title": "Certificate Name",
+     "issuer": "Issuing Organization", 
+     "date": "2024-01-01",
+     "image": "/certificates/cert.jpg",
+     "url": "https://cert-link.com",
+     "skills": ["Skill 1", "Skill 2"]
+   }
+   ```
 
-### Vercel/Netlify
-1. Build the project: `npm run build`
-2. Deploy the `dist` directory
+2. Add certificate image to `client/public/certificates/`
+3. Restart the dev server
 
-### Traditional Hosting
-1. Run `npm run build`
-2. Upload the contents of the `dist` directory to your web server
+## 🎨 Customization
 
-### Docker (Optional)
-A Dockerfile can be created for containerized deployment if needed.
+### Colors & Themes
+Edit `client/src/index.css` to modify:
+- Color palette (CSS variables)
+- Dark/light theme colors
+- Typography settings
 
-## Technologies Used
+### Content Sections
+- **Hero**: `client/src/components/hero-section.tsx`
+- **About**: `client/src/components/about-section.tsx`
+- **Projects**: `client/src/components/projects-section.tsx`
+- **Contact**: `client/src/components/contact-section.tsx`
 
-- **Frontend**: React 18, TypeScript, Vite
-- **Styling**: Tailwind CSS, shadcn/ui, Radix UI
-- **Routing**: Wouter (lightweight client-side routing)
-- **State Management**: React Query for server state
-- **Database**: Drizzle ORM with PostgreSQL (optional)
-- **Icons**: Lucide React, React Icons
+## 🛠️ Scripts
 
-## License
+```bash
+npm run dev          # Start development (both frontend & backend)
+npm run build        # Build for production
+npm run start        # Start production server
+npm run check        # TypeScript type checking
+```
 
-This project is open source and available under the MIT License.
+## 🚀 Production Deployment
 
-## Support
+1. **Build the application**
+   ```bash
+   npm run build
+   ```
 
-For questions or support, please refer to the documentation or create an issue in the repository.
+2. **Deploy the `dist` folder** to your hosting provider
+
+3. **Configure environment variables** (if needed):
+   - `PORT`: Server port (default: 5000)
+   - `NODE_ENV`: Set to 'production'
+
+4. **Ensure SPA routing** - Configure your server to serve `index.html` for all non-API routes
+
+## 🔧 Environment Variables
+
+Create `.env` file for local development:
+```env
+NODE_ENV=development
+PORT=5000
+```
+
+## 📦 Dependencies
+
+### Core
+- React 18 - Frontend framework
+- Express.js - Backend server
+- TypeScript - Type safety
+- Vite - Build tool & dev server
+- Tailwind CSS - Styling framework
+
+### UI Components
+- @radix-ui/* - Accessible UI primitives
+- lucide-react - Icons
+- framer-motion - Animations
+
+## 🐛 Troubleshooting
+
+**Port conflicts**: Change ports in server config files
+**Build errors**: Run `npm run check` for TypeScript errors
+**Content not loading**: Verify JSON format and restart server
+**Styling issues**: Clear browser cache and rebuild
+
+## 📱 Features
+
+- ✅ Responsive design (mobile-first)
+- ✅ Dark/light theme toggle
+- ✅ Smooth scrolling & animations
+- ✅ File-based content management
+- ✅ SEO optimized
+- ✅ TypeScript throughout
+- ✅ Modern cozy design
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open Pull Request
+
+## 📄 License
+
+MIT License - see LICENSE file for details
